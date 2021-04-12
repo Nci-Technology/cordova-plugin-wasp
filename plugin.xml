@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-waspHRMCollectorPlugin" version="1.2.0">
+
+  <name>cordova-plugin-waspHRMCollectorPlugin</name>
+
+  <js-module name="WaspHRMCollectorPlugin" src="www/WaspHRMCollectorPlugin.js">
+    <clobbers target="WaspHRMCollectorPlugin"/>
+  </js-module>
+
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="WaspHRMCollectorPlugin">
+        <param name="android-package" value="com.ca.waspHRM.WaspHRMCollectorPlugin"/>
+      </feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml"/>
+    <source-file src="src/android/WaspHRMCollectorPlugin.java" target-dir="src/com/ca/waspHRM"/>
+    <source-file src="src/android/WaspHRMCollectorBinding.java" target-dir="src/com/ca/waspHRM"/>
+    <source-file src="src/android/WaspHRMCollectorMessageCallbackHandler.java" target-dir="src/com/ca/waspHRM"/>
+    <source-file src="src/android/WaspHRMModel.java" target-dir="src/com/ca/waspHRM"/>
+    <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference"/>
+    <framework src="com.google.code.gson:gson:2.2.+"/>
+    <resource-file src="src/android/WASP_HRM_Collector.aar" target="libs/WASP_HRM_Collector.aar"/>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.INTERNET"/>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.npe_inc.wasp.hrm_collector.HRM_Collector"/>
+    </config-file>
+  </platform>
+
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="WaspHRMCollectorPlugin">
+        <param name="ios-package" value="WaspHRMCollectorPlugin"/>
+      </feature>
+    </config-file>
+    <source-file src="src/ios/WaspHRMCollectorPlugin.m"/>
+    <source-file src="src/ios/GatewayManager.h"/>
+    <source-file src="src/ios/GatewayManager.m"/>
+    <source-file src="src/ios/SensorSet.h"/>
+    <source-file src="src/ios/SensorSet.m"/>
+    <source-file src="src/ios/NpeGate.framework" target-dir="lib" framework="true"/>
+    <framework src="src/ios/NpeGate.framework" embed="false" custom="true"/>
+    <framework src="CoreBluetooth.framework"/>
+    <framework src="libz.tbd"/>
+    <framework src="SystemConfiguration.framework"/>
+    <framework src="NetworkExtension.framework"/>
+    <framework src="CoreLocation.framework"/>
+    <config-file parent="com.apple.developer.networking.wifi-info" target="*/Entitlements-Debug.plist">
+      <true/>
+    </config-file>
+    <config-file parent="com.apple.developer.networking.wifi-info" target="*/Entitlements-Release.plist">
+      <true/>
+    </config-file>
+    <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+      <string>Location access is needed for getting WiFi information</string>
+    </config-file>
+  </platform>
+
+</plugin>

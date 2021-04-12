@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Sensors</key>
+	<dict>
+		<key>BikePower</key>
+		<array/>
+		<key>BikeSpeed</key>
+		<array/>
+		<key>Footpod</key>
+		<array>
+			<dict>
+				<key>deviceNumber</key>
+				<integer>7893</integer>
+				<key>transmissionType</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Heartrate</key>
+		<array>
+			<dict>
+				<key>deviceNumber</key>
+				<integer>18111</integer>
+				<key>transmissionType</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>WeightScale</key>
+		<array>
+			<dict>
+				<key>deviceNumber</key>
+				<integer>42907</integer>
+				<key>deviceUUIDString</key>
+				<string></string>
+				<key>networkType</key>
+				<integer>1</integer>
+				<key>transmissionType</key>
+				<integer>5</integer>
+			</dict>
+		</array>
+	</dict>
+	<key>Settings</key>
+	<dict>
+		<key>bikeWheelCircumference</key>
+		<real>2.069999933242798</real>
+		<key>coastingTimeout</key>
+		<integer>3000</integer>
+		<key>staleDataString</key>
+		<string>--</string>
+		<key>staleDataTimeout</key>
+		<integer>5000</integer>
+		<key>useMetricUnits</key>
+		<real>1</real>
+	</dict>
+</dict>
+</plist>

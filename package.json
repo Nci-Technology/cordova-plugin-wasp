@@ -1,0 +1,19 @@
+{
+  "name": "waspHRMCollectorPlugin",
+  "version": "1.2.0",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-waspHRMCollectorPlugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "senthilarasan sekar",
+  "license": "MIT "
+}
